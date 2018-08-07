@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-import {fetchQuestionData, submitQuestionAnswer} from '../actions/questions'
+import {fetchQuestionData, submitQuestionAnswer, incrementQuestionNumber} from '../actions/questions'
 import './dashboard.css'
 
 export class Dashboard extends React.Component {
@@ -15,12 +15,14 @@ export class Dashboard extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
-        this.props.dispatch(fetchQuestionData());
+        this.props.dispatch(fetchQuestionData(this.props.questionNum));
+        // this.props.dispatch(incrementQuestionNumber(this.props.questionNum))
     }
 
     handleSubmit(){
         // this.setState({imageClass: "pokemon-image-fade-out"})
         this.props.dispatch(submitQuestionAnswer({input: this.state.inputValue, id: this.props.currentPokemon.id}))
+        this.props.dispatch(incrementQuestionNumber(this.props.questionNum))
 
     }
 
@@ -35,7 +37,7 @@ export class Dashboard extends React.Component {
     }
 
     nextPokemon() {
-        setTimeout(()=>{new Promise(()=>this.props.dispatch(fetchQuestionData()).then(this.setState({imageClass: 'pokemon-image-fade-in'})))}, 1000);
+        setTimeout(()=>{new Promise(()=>this.props.dispatch(fetchQuestionData(this.props.questionNum)).then(this.setState({imageClass: 'pokemon-image-fade-in'})))}, 1000);
         this.setState({
             imageClass: 'pokemon-image-fade-out',
             inputValue: "" 
@@ -77,7 +79,8 @@ const mapStateToProps = state => {
         protectedData: state.protectedData.data,
         submited: false,
         currentPokemon: state.questions.currentPokemon,
-        results: state.questions.results
+        results: state.questions.results,
+        questionNum: state.questions.questionNum 
     };
 };
 

@@ -4,6 +4,7 @@ import {
     SUBMIT_QUESTION_DATA_REQUEST,
     SUBMIT_QUESTION_DATA_SUCCESS,
     FETCH_QUESTION_DATA_ERROR,
+    INCREMENT_QUESTION_NUMBER,
     fetchQuestionDataSuccess
 } from '../actions/questions';
 
@@ -11,7 +12,8 @@ const initialState = {
     results: {},
     currentPokemon: {},
     loading: false,
-    error: null
+    error: null,
+    questionNum: 0
 };
 
 export default function reducer(state = initialState, action) {
@@ -34,6 +36,10 @@ export default function reducer(state = initialState, action) {
     else if (action.type === FETCH_QUESTION_DATA_ERROR) {
 
         return {...state, error:action.error, loading:false}
+    }
+    else if (action.type === INCREMENT_QUESTION_NUMBER) {
+
+        return {...state, questionNum: action.count}
     }
     return state;
 }

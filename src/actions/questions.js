@@ -23,15 +23,24 @@ export const submitQuestionDataSuccess = data => ({
     data
 });
 
+export const INCREMENT_QUESTION_NUMBER = 'INCREMENT_QUESTION_NUMBER';
+export const incrementQuestionNumber = count => {
+    if(count === 9){count = 0}
+    else {count += 1}
+    return ({type: INCREMENT_QUESTION_NUMBER,
+            count
+})
+}
+
 export const FETCH_QUESTION_DATA_ERROR = 'FETCH_QUESTION_DATA_ERROR';
 export const fetchQuestionDataError = error => ({
     type: FETCH_QUESTION_DATA_ERROR,
     error
 });
 
-export const fetchQuestionData = () => dispatch => {
+export const fetchQuestionData = (count) => dispatch => {
     dispatch(fetchQuestionDataRequest())
-    return fetch(`${API_BASE_URL}/questions`, {
+    return fetch(`${API_BASE_URL}/questions/${count}`, {
         method: 'GET',
         // headers: {
         //     // Provide our auth token as credentials
