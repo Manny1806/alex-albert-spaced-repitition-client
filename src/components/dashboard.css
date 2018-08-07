@@ -48,7 +48,7 @@
     height: 80%;
     opacity: 0;
     animation: pokemon-fade-in-animation 1s forwards;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 .pokemon-image-fade-out {
@@ -60,7 +60,7 @@
     height: 80%;
     opacity: 1;
     animation: pokemon-fade-out-animation 1s forwards;
-    animation-delay: 1s;
+    /* animation-delay: 1s; */
 }
 
 @keyframes pokemon-fade-in-animation {
