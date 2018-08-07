@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+import {fetchQuestionData, submitQuestionAnswer} from '../actions/questions'
 import './dashboard.css'
 
 export class Dashboard extends React.Component {
@@ -13,6 +14,7 @@ export class Dashboard extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
+        this.props.dispatch(fetchQuestionData());
     }
 
     handleSubmit(){
@@ -25,7 +27,7 @@ export class Dashboard extends React.Component {
                 <div className="main-section">
                     <div className="image-outer-box">
                         <div className="image-box">
-                        <img src="https://cdn.gamerant.com/wp-content/uploads/pokemon_icon_143_00_shiny.jpg.optimal.jpg" className={this.state.imageClass} />
+                        <img src={this.props.currentPokemon.imageURL} className={this.state.imageClass} />
                         </div>
                     </div>
                     <div className="input-outer-box">
@@ -46,7 +48,9 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         protectedData: state.protectedData.data,
-        submited: false
+        submited: false,
+        currentPokemon: state.questions.currentPokemon ? state.questions.currentPokemon : undefined,
+        results: state.questions.results
     };
 };
 
