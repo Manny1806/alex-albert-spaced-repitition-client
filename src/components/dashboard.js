@@ -49,7 +49,7 @@ const mapStateToProps = state => {
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         protectedData: state.protectedData.data,
         submited: false,
-        currentPokemon: state.questions.currentPokemon ? state.questions.currentPokemon : undefined,
+        currentPokemon: state.questions.currentPokemon,
         results: state.questions.results
     };
 };
