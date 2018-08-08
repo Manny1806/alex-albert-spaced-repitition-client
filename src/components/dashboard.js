@@ -28,17 +28,19 @@ export class Dashboard extends React.Component {
             {
                 input: this.state.inputValue,
                 id: this.props.currentPokemon.id,
-                userId: this.props.currentUser.id
+                userId: this.props.id
             }
         ))
-        this.props.dispatch(incrementQuestionNumber(this.props.questionNum))
+        // this.props.dispatch(incrementQuestionNumber(this.props.questionNum))
 
     }
     resultDisplay(){
         if(this.props.results.bool === undefined){
             return <div></div>
         } else if (this.props.results.bool === true){
-            return <div>You are correct!<button onClick={()=>{this.nextPokemon()}}>Next Pokemon</button></div>
+            return <div>You are correct!<button onClick={()=>{
+                this.props.dispatch(resetQuestionData())
+                this.nextPokemon()}}>Next Pokemon</button></div>
         } else if (this.props.results.bool === false){
             return <div>You are incorrect!<button onClick={()=>{
                 this.props.dispatch(resetQuestionData())
@@ -47,7 +49,7 @@ export class Dashboard extends React.Component {
         }
     }
     nextPokemon() {
-        setTimeout(()=>{new Promise(()=>this.props.dispatch(fetchQuestionData(this.props.questionNum)).then(this.setState({imageClass: 'pokemon-image-fade-in'})))}, 1000);
+        setTimeout(()=>{new Promise(()=>this.props.dispatch(fetchQuestionData(this.props.id)).then(this.setState({imageClass: 'pokemon-image-fade-in'})))}, 1000);
         this.setState({
             imageClass: 'pokemon-image-fade-out',
             inputValue: "", 
