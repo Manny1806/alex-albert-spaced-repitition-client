@@ -44,6 +44,28 @@ export const fetchQuestionDataError = error => ({
     error
 });
 
+export const fetchQuestionData = id => (dispatch, getState) => {
+    console.log(id);
+    const authToken = getState().auth.authToken;
+    dispatch(fetchQuestionDataRequest());
+    return fetch(`${API_BASE_URL}/questions`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify({id})
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json(res.question))
+    .then(data => {
+        console.log(data);
+        return dispatch(fetchQuestionDataSuccess(data.question))
+    })
+    .catch(err => dispatch(fetchQuestionDataError(err)));
+};
+
+/*
 export const fetchQuestionData = (count) => dispatch => {
     dispatch(fetchQuestionDataRequest())
     return fetch(`${API_BASE_URL}/questions/${count}`, {
@@ -60,6 +82,7 @@ export const fetchQuestionData = (count) => dispatch => {
             dispatch(fetchQuestionDataError(err));
         });
 };
+*/
 
 export const submitQuestionAnswer = answer => dispatch => {
     dispatch(submitQuestionDataRequest())

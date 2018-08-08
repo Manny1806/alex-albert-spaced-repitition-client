@@ -19,8 +19,10 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     if (action.type === FETCH_QUESTION_DATA_REQUEST) {
-
-        return {...state, loading:true}
+        return {
+            ...state,
+            loading:true
+        };
     }
     else if (action.type === FETCH_QUESTION_DATA_SUCCESS) {
         // console.log(action.EVENTs)

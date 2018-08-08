@@ -15,8 +15,9 @@ export class Dashboard extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(fetchProtectedData());
-        this.props.dispatch(fetchQuestionData(this.props.questionNum));
+        // this.props.dispatch(fetchProtectedData());
+        // this.props.dispatch(fetchQuestionData(this.props.questionNum));
+        this.props.dispatch(fetchQuestionData(this.props.id));
         // this.props.dispatch(incrementQuestionNumber(this.props.questionNum))
     }
     handleSubmit(){
@@ -79,7 +80,7 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
-        username: state.auth.currentUser.username,
+        id: state.auth.currentUser.id,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         protectedData: state.protectedData.data,
         submited: false,
