@@ -5,7 +5,8 @@ import {
     SUBMIT_QUESTION_DATA_SUCCESS,
     FETCH_QUESTION_DATA_ERROR,
     INCREMENT_QUESTION_NUMBER,
-    fetchQuestionDataSuccess
+    RESET_QUESTION_DATA,
+    // fetchQuestionDataSuccess
 } from '../actions/questions';
 
 const initialState = {
@@ -40,6 +41,10 @@ export default function reducer(state = initialState, action) {
     else if (action.type === INCREMENT_QUESTION_NUMBER) {
 
         return {...state, questionNum: action.count}
+    }
+    else if (action.type === RESET_QUESTION_DATA) {
+
+        return {...state, results: action.data}
     }
     return state;
 }

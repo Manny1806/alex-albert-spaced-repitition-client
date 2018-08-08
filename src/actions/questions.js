@@ -23,6 +23,12 @@ export const submitQuestionDataSuccess = data => ({
     data
 });
 
+export const RESET_QUESTION_DATA = 'RESET_QUESTION_DATA';
+export const resetQuestionData = () => ({
+    type: RESET_QUESTION_DATA,
+    data: {}
+});
+
 export const INCREMENT_QUESTION_NUMBER = 'INCREMENT_QUESTION_NUMBER';
 export const incrementQuestionNumber = count => {
     if(count === 9){count = 0}
