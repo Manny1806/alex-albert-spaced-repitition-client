@@ -24,7 +24,13 @@ export class Dashboard extends React.Component {
         this.setState({
             buttonDisable: true
         })
-        this.props.dispatch(submitQuestionAnswer({input: this.state.inputValue, id: this.props.currentPokemon.id}))
+        this.props.dispatch(submitQuestionAnswer(
+            {
+                input: this.state.inputValue,
+                id: this.props.currentPokemon.id,
+                userId: this.props.currentUser.id
+            }
+        ))
         this.props.dispatch(incrementQuestionNumber(this.props.questionNum))
 
     }
@@ -51,8 +57,8 @@ export class Dashboard extends React.Component {
 
     updateInputValue (e) {
         this.setState({
-          inputValue: e.target.value}
-        );
+          inputValue: e.target.value
+        });
     }
     render() {
         return (

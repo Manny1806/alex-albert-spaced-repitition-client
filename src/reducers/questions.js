@@ -26,11 +26,18 @@ export default function reducer(state = initialState, action) {
     }
     else if (action.type === FETCH_QUESTION_DATA_SUCCESS) {
         // console.log(action.EVENTs)
-        return {...state, currentPokemon: action.data, error: null, loading:false }
+        return {
+            ...state,
+            currentPokemon: action.data,
+            error: null,
+            loading:false
+        }
     }
     else if (action.type === SUBMIT_QUESTION_DATA_REQUEST) {
-
-        return {...state, loading:true}
+        return {
+            ...state,
+            loading:true
+        };
     }
     else if (action.type === SUBMIT_QUESTION_DATA_SUCCESS) {
         // console.log(action.EVENTs)

@@ -86,7 +86,7 @@ export const fetchQuestionData = (count) => dispatch => {
 
 export const submitQuestionAnswer = answer => dispatch => {
     dispatch(submitQuestionDataRequest())
-    return fetch(`${API_BASE_URL}/questions`, {
+    return fetch(`${API_BASE_URL}/questions/${answer.id}`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
