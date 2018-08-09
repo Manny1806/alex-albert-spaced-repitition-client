@@ -47,13 +47,13 @@ export const fetchQuestionDataError = error => ({
 export const fetchQuestionData = id => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     dispatch(fetchQuestionDataRequest());
-    return fetch(`${API_BASE_URL}/questions`, {
-        method: 'POST',
+    return fetch(`${API_BASE_URL}/questions/${id}`, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${authToken}`
         },
-        body: JSON.stringify({id})
+        // body: JSON.stringify({id})
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json(res.question))
