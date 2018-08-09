@@ -13,6 +13,7 @@
 }
 
 .image-box{
+    position: relative;
     height: 50vh;
     width: 50vh;
     background-color: white;
@@ -43,7 +44,7 @@
     display: block;
     position: relative;
     left: 10%;
-    top: 10%;
+    top: 18%;
     width: 80%;
     height: 80%;
     opacity: 0;
@@ -55,12 +56,24 @@
     display: block;
     position: relative;
     left: 10%;
-    top: 10%;
+    top: 18%;
     width: 80%;
     height: 80%;
     opacity: 1;
     animation: pokemon-fade-out-animation 1s forwards;
     /* animation-delay: 1s; */
+}
+
+.pokemonName {
+    display: block;
+    position: absolute;
+    top: 3%;
+    font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
 @keyframes pokemon-fade-in-animation {

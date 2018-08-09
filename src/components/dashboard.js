@@ -15,10 +15,7 @@ export class Dashboard extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.dispatch(fetchProtectedData());
-        // this.props.dispatch(fetchQuestionData(this.props.questionNum));
         this.props.dispatch(fetchQuestionData(this.props.id));
-        // this.props.dispatch(incrementQuestionNumber(this.props.questionNum))
     }
     handleSubmit(){
         this.setState({
@@ -36,6 +33,7 @@ export class Dashboard extends React.Component {
     }
     resultDisplay(){
         if(this.props.results.bool === undefined){
+            this.displayName("Who's that pokemon?")
             return <div></div>
         } else if (this.props.results.bool === true){
             return <div>You are correct!<button onClick={()=>{
@@ -47,6 +45,14 @@ export class Dashboard extends React.Component {
                 this.nextPokemon()
             }}>Next Pokemon</button></div>
         }
+    }
+    displayName(){
+        if(this.props.results.bool === undefined){
+            return <span className="pokemonName">Who's that Pokemon?</span>
+        } else {
+            return <span className="pokemonName">{this.props.results.name}</span>
+        }
+        
     }
     nextPokemon() {
         setTimeout(()=>{new Promise(()=>this.props.dispatch(fetchQuestionData(this.props.id)).then(this.setState({imageClass: 'pokemon-image-fade-in'})))}, 1000);
@@ -64,10 +70,12 @@ export class Dashboard extends React.Component {
     }
     render() {
         return (
+            
             <div className="dashboard">
                 <div className="main-section">
                     <div className="image-outer-box">
                         <div className="image-box">
+                        {this.displayName()}
                         <img src={this.props.currentPokemon.imageURL} className={this.state.imageClass} />
                         </div>
                     </div>
