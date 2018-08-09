@@ -38,6 +38,8 @@
     margin-left: auto;
     margin-right:auto;
     margin-top: 10vh;
+    padding: 10px;
+    box-sizing: border-box;
     border-radius: 5%
 }
 .pokemon-image-fade-in {
@@ -74,6 +76,14 @@
     left: 0;
     right: 0;
     text-align: center;
+}
+
+.submit-container{
+    margin-top: 30%;
+    text-align: center;
+}
+.submit-container button{
+   margin-left: 5px;
 }
 
 @keyframes pokemon-fade-in-animation {

@@ -81,9 +81,12 @@ export class Dashboard extends React.Component {
                     </div>
                     <div className="input-outer-box">
                         <div className="input-box">
+                            <div>{this.props.currentPokemon.description}</div>
+                            <div className="submit-container">
                             <input value={this.state.inputValue} onChange={(e)=>this.updateInputValue(e)}></input>
                             <button type="submit" disabled={this.state.buttonDisable} onClick={()=>{
                                 this.handleSubmit()}}>Submit</button>
+                            </div>
                         </div>
                         {this.resultDisplay()}
                     </div>
