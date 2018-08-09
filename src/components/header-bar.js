@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {resetQuestionData} from '../actions/questions'
+import './header-bar.css'
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -21,7 +22,7 @@ export class HeaderBar extends React.Component {
         }
         return (
             <div className="header-bar">
-                <h1>Welcome back</h1>
+                <h1>Welcome {this.props.firstName}!</h1>
                 {logOutButton}
             </div>
         );
@@ -29,7 +30,8 @@ export class HeaderBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    firstName: state.auth.currentUser !== null ? state.auth.currentUser.firstName : ""
 });
 
 export default connect(mapStateToProps)(HeaderBar);

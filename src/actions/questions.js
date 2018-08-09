@@ -58,30 +58,11 @@ export const fetchQuestionData = id => (dispatch, getState) => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json(res.question))
     .then(data => {
-        console.log(data);
         return dispatch(fetchQuestionDataSuccess(data.question))
     })
     .catch(err => dispatch(fetchQuestionDataError(err)));
 };
 
-/*
-export const fetchQuestionData = (count) => dispatch => {
-    dispatch(fetchQuestionDataRequest())
-    return fetch(`${API_BASE_URL}/questions/${count}`, {
-        method: 'GET',
-        // headers: {
-        //     // Provide our auth token as credentials
-        //     Authorization: `Bearer ${authToken}`
-        // }
-    })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then(data => dispatch(fetchQuestionDataSuccess(data)))
-        .catch(err => {
-            dispatch(fetchQuestionDataError(err));
-        });
-};
-*/
 
 export const submitQuestionAnswer = answer => (dispatch, getState) => {
     const authToken = getState().auth.authToken;

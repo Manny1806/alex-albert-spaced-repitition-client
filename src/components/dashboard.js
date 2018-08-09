@@ -36,11 +36,16 @@ export class Dashboard extends React.Component {
             this.displayName("Who's that pokemon?")
             return <div></div>
         } else if (this.props.results.bool === true){
-            return <div>You are correct!<button onClick={()=>{
+            return <div><span className="attempts">Total Attempts: {this.props.results.attempts}</span>
+                <span className="passed">Passed Attempts: {this.props.results.passed}</span>
+                You are correct!<button onClick={()=>{
                 this.props.dispatch(resetQuestionData())
-                this.nextPokemon()}}>Next Pokemon</button></div>
+                this.nextPokemon()}}>Next Pokemon</button>
+                </div>
         } else if (this.props.results.bool === false){
-            return <div>You are incorrect!<button onClick={()=>{
+            return <div><span className="attempts">Total Attempts: {this.props.results.attempts}</span>
+                <span className="passed">Passed Attempts: {this.props.results.passed}</span>
+                You are incorrect!<button onClick={()=>{
                 this.props.dispatch(resetQuestionData())
                 this.nextPokemon()
             }}>Next Pokemon</button></div>
@@ -87,8 +92,8 @@ export class Dashboard extends React.Component {
                             <button type="submit" disabled={this.state.buttonDisable} onClick={()=>{
                                 this.handleSubmit()}}>Submit</button>
                             </div>
+                            <div className="result">{this.resultDisplay()}</div>
                         </div>
-                        {this.resultDisplay()}
                     </div>
                 </div>
             </div>
