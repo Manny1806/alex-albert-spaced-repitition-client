@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import {Link} from 'react-router-dom';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
@@ -18,32 +19,44 @@ export class RegistrationForm extends React.Component {
 
     render() {
         return (
-            <form
-                className="login-form"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
-                <label htmlFor="firstName">First name</label>
-                <Field component={Input} type="text" name="firstName" />
-                <label htmlFor="lastName">Last name</label>
-                <Field component={Input} type="text" name="lastName" />
-                <label htmlFor="username">Username</label>
+            <section className="form-container" aria-live="polite">
+            <form className="form-input" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+                <label htmlFor="firstName">First name:</label>
                 <Field
                     component={Input}
+                    element="input"
+                    type="text"
+                    name="firstName"
+                    validate={[required, nonEmpty, isTrimmed]}
+                />
+                <label htmlFor="lastName">Last name:</label>
+                <Field
+                    component={Input}
+                    element="input"
+                    type="text"
+                    name="lastName"
+                    validate={[required, nonEmpty, isTrimmed]}
+                />
+                <label htmlFor="username">Username:</label>
+                <Field
+                    component={Input}
+                    element="input"
                     type="text"
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password:</label>
                 <Field
                     component={Input}
+                    element="input"
                     type="password"
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
                 />
-                <label htmlFor="passwordConfirm">Confirm password</label>
+                <label htmlFor="passwordConfirm">Confirm password:</label>
                 <Field
                     component={Input}
+                    element="input"
                     type="password"
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
@@ -54,6 +67,8 @@ export class RegistrationForm extends React.Component {
                     Register
                 </button>
             </form>
+            <p>Click here to <Link to="/">Login</Link></p>
+            </section>
         );
     }
 }
