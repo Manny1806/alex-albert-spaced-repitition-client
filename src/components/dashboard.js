@@ -12,6 +12,7 @@ export class Dashboard extends React.Component {
         this.state = { imageClass: 'pokemon-image-fade-in',
                        backgroundClass: 'main-section-fill-fade-in',
                        inputValue: "",
+                       placeholderText: "your answer",
                        buttonDisable: false };
     }
 
@@ -19,18 +20,24 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchQuestionData(this.props.id));
     }
     handleSubmit(){
+        if(this.state.inputValue === "") {
+            this.setState({placeholderText: "input cannot be empty"})
+        } else {
+
+        
         this.setState({
-            buttonDisable: true
+            buttonDisable: true,
+            placeholderText: "your answer"
         })
         this.props.dispatch(submitQuestionAnswer(
             {
                 input: this.state.inputValue,
                 id: this.props.currentPokemon.id,
-                userId: this.props.id
+                userId: this.props.id,
             }
         ))
         // this.props.dispatch(incrementQuestionNumber(this.props.questionNum))
-
+    }
     }
     resultDisplay(){
         if(this.props.results.bool === undefined){
@@ -91,7 +98,7 @@ export class Dashboard extends React.Component {
                         <div className="input-box">
                             <div className="description">{this.props.currentPokemon.description}</div>
                             <div className="submit-container">
-                            <input placeholder="your answer"value={this.state.inputValue} onChange={(e)=>this.updateInputValue(e)}></input>
+                            <input placeholder={this.state.placeholderText}value={this.state.inputValue} onChange={(e)=>this.updateInputValue(e)}></input>
                             <button type="submit" disabled={this.state.buttonDisable} onClick={()=>{
                                 this.handleSubmit()}}>Submit</button>
                             </div>
