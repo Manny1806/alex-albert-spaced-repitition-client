@@ -80,7 +80,7 @@ export class Dashboard extends React.Component {
             
             <div className="dashboard">
                 <div className="main-section" >
-                    <div className={this.state.backgroundClass} style={{backgroundColor: "silver"}}></div>
+                    <div className={this.state.backgroundClass} style={{backgroundColor: this.props.currentPokemon.typeColor}}></div>
                     <div className="image-outer-box">
                         <div className="image-box">
                         {this.displayName()}
