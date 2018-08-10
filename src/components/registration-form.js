@@ -19,7 +19,7 @@ export class RegistrationForm extends React.Component {
 
     render() {
         return (
-            <section className="form-container" aria-live="polite">
+            <section className="form-container" role="region" aria-live="polite">
             <form className="form-input" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                 <label htmlFor="firstName">First name:</label>
                 <Field
