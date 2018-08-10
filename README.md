@@ -37,6 +37,8 @@ Server-Side Frameworks/Libraries:
 * JSONWebToken
 * bcryptjs
 
+Server Github: https://github.com/thinkful-ei21/alex-albert-spaced-repitition-server
+
 ## How to Use
 
 To start, simply visit the home page and create a user account.
