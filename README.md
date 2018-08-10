@@ -55,9 +55,13 @@ Pokémon Quiz App is comprised of three major components.
 
 All users will be greeted with this page upon visit the home page at `/`. This is rendered by the `LandingPage` component. It uses semantic HTML tags and is responsive to any input failing to meet the required format of an input field. There's also a link to register.
 
-![Register Page](https://raw.githubusercontent.com/thinkful-ei21/alex-albert-spaced-repitition-client/master/src/screenshots/register-page.png)
+## Registration Page
+
+![Registration Page](https://raw.githubusercontent.com/thinkful-ei21/alex-albert-spaced-repitition-client/master/src/screenshots/register-page.png)
 
 A page for new users to sign on. Rendered by the `RegistrationPage` component, this component is found in path `/register`. It also has a semantic input form, and is responsive to registration failures such as errors from Username being already in use.
+
+## Dashboard
 
 ![Dashboard](https://raw.githubusercontent.com/thinkful-ei21/alex-albert-spaced-repitition-client/master/src/screenshots/quiz-page.png)
 
