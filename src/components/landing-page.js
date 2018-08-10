@@ -11,10 +11,10 @@ export function LandingPage(props) {
     }
 
     return (
-        <div className="home">
-            <h2>Continue your path to become a <span id="eye-catcher">Pokémon</span> master!</h2>
+        <main className="home" role="main">
+            <h2>Test your knowledge of <span id="eye-catcher">Pokémon</span> names!</h2>
             <LoginForm />
-        </div>
+        </main>
     );
 }
 

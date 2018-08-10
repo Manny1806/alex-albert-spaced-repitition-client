@@ -21,7 +21,7 @@ export class LoginForm extends React.Component {
             );
         }
         return (
-            <section className="form-container" aria-live="polite">
+            <section className="form-container" role="region" aria-live="polite">
             <form className="form-input" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                 {error}
                 <label htmlFor="username">Username:</label>
