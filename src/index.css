@@ -1,7 +1,26 @@
+html {
+  background: url(https://img.wallpapersafari.com/desktop/1600/900/75/83/S1GOo7.png) no-repeat center center fixed;
+  background-size: cover;
+}
+/*
+https://img00.deviantart.net/f7c9/i/2010/335/5/c/pokeball_wallpaper_2_by_aervormund-d3415su.png
+*/
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   height: 100%;
-  background-color: tomato;
+}
+
+.home h2 {
+  margin: 0 auto;
+  width: 320px;
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+h2 #eye-catcher {
+  text-decoration: underline;
 }
