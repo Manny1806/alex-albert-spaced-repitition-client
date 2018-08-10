@@ -79,7 +79,7 @@ export class Dashboard extends React.Component {
 
     updateInputValue (e) {
         this.setState({
-          inputValue: e.target.value
+          inputValue: e.target.value.trim()
         });
     }
     render() {
