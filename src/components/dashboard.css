@@ -3,6 +3,7 @@
     width: 80vw;
     height: 70vh;
     margin: 0 auto;
+    box-sizing: border-box;
     /* background-color: silver; */
     
 }
@@ -16,6 +17,7 @@
     border-radius: 20px;
     animation: pokemon-fade-in-animation 1s forwards;
     animation-delay: 0.5s;
+    box-sizing: border-box;
 }
 
 .main-section-fill-fade-out{
@@ -26,6 +28,7 @@
     border: solid black 7px;
     border-radius: 20px;
     animation: pokemon-fade-out-animation 1s forwards;
+    box-sizing: border-box;
     /* animation-delay: 0.5s; */
 }
 
@@ -34,6 +37,7 @@
     float: left;
     width: 50%;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .image-box{
@@ -55,6 +59,7 @@
     float: left;
     width: 50%;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .input-box{
@@ -113,7 +118,7 @@
 
 .submit-container{
     position: absolute;
-    width: 100%;
+    width: 95%;
     top: 46%;
     text-align: center;
 }
@@ -125,7 +130,7 @@
     position: absolute;
     bottom: 4px;
     height: 40%;
-    width: 100%;
+    width: 95%;
     text-align: center;
 }
 
@@ -179,4 +184,297 @@
 @keyframes pokemon-fade-out-animation {
     from {opacity: 1;}
     to {opacity: 0;}
+}
+
+@media only screen and (max-width: 825px) {
+    .image-outer-box {
+        /* display: inline-block; */
+        float: none;
+        width: 100%;
+        height: 47%;
+        position: relative;
+        top: 10px;
+        
+    }
+
+    .input-outer-box {
+        /* display: inline-block; */
+        float: none;
+        width: 100%;
+        height: 47%;
+        position: relative;
+        top: 21px;
+        
+    }
+
+    .result {
+        height: 35%;
+        bottom: 0;
+        font-size: 14px;
+    }
+
+    .image-box {
+        margin-top: 0;
+    }
+
+    .input-box {
+        margin-top: 0;
+        padding: 8px;
+    }
+    
+    .main-section {
+        width: 60vw;
+        height: 85vh;
+    }
+
+    .image-box{
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .input-box{
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+    .message {
+        margin-top: 2%;
+    }
+    .message-wrong {
+        margin-top: 2%;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .image-outer-box {
+        /* display: inline-block; */
+        float: none;
+        width: 100%;
+        height: 47%;
+        position: relative;
+        top: 10px;
+        
+    }
+
+    .input-outer-box {
+        /* display: inline-block; */
+        float: none;
+        width: 100%;
+        height: 47%;
+        position: relative;
+        top: 21px;
+        
+    }
+
+    .result {
+        height: 35%;
+        bottom: 0;
+        font-size: 14px;
+    }
+
+    .image-box {
+        margin-top: 0;
+        border: solid black 3px
+    }
+
+    .input-box {
+        margin-top: 0;
+        padding: 8px;
+        border: solid black 3px
+    }
+    
+    .main-section {
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .image-box{
+        height: 43vh;
+        width: 43vh;
+    }
+
+    .input-box{
+        height: 43vh;
+        width: 43vh;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+    .message {
+        margin-top: 2%;
+    }
+    .message-wrong {
+        margin-top: 2%;
+    }
+}
+
+@media only screen and (height: 812px) {
+    .image-box{
+        height: 38vh;
+        width: 38vh;
+    }
+
+    .image-outer-box{
+        top: 40px;
+    }
+
+    .input-box{
+        height: 38vh;
+        width: 38vh;
+    }
+
+    .description{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (height: 1366px) {
+    .image-outer-box {
+        /* display: inline-block; */
+        float: none;
+        width: 100%;
+        height: 47%;
+        position: relative;
+        top: 10px;
+        
+    }
+
+    .input-outer-box {
+        /* display: inline-block; */
+        float: none;
+        width: 100%;
+        height: 47%;
+        position: relative;
+        top: 21px;
+        
+    }
+
+    .pokemonName {
+        font-size: 40px;
+    }
+
+    .result {
+        height: 35%;
+        bottom: 0;
+        font-size: 35px;
+    }
+
+    .image-box {
+        margin-top: 0;
+    }
+
+    .input-box {
+        margin-top: 0;
+        padding: 8px;
+    }
+    
+    .main-section {
+        width: 60vw;
+        height: 85vh;
+    }
+
+    .image-box{
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .input-box{
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .description {
+        font-size: 35px;
+    }
+    .message {
+        margin-top: 2%;
+    }
+    .message-wrong {
+        margin-top: 2%;
+    }
+    .submit-container button{
+        font-size: 35px;
+    }
+    .submit-container input{
+        font-size: 32px;
+    }
+
+}
+
+@media only screen and (height: 1024px) {
+    .image-outer-box {
+        /* display: inline-block; */
+        float: none;
+        width: 100%;
+        height: 47%;
+        position: relative;
+        top: 10px;
+        
+    }
+
+    .input-outer-box {
+        /* display: inline-block; */
+        float: none;
+        width: 100%;
+        height: 47%;
+        position: relative;
+        top: 21px;
+        
+    }
+
+    .pokemonName {
+        font-size: 35px;
+    }
+
+    .result {
+        height: 35%;
+        bottom: 0;
+        font-size: 28px;
+    }
+
+    .image-box {
+        margin-top: 0;
+    }
+
+    .input-box {
+        margin-top: 0;
+        padding: 8px;
+    }
+    
+    .main-section {
+        width: 60vw;
+        height: 85vh;
+    }
+
+    .image-box{
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .input-box{
+        height: 40vh;
+        width: 40vh;
+    }
+
+    .description {
+        font-size: 27px;
+    }
+    .message {
+        margin-top: 2%;
+    }
+    .message-wrong {
+        margin-top: 2%;
+    }
+    .submit-container button{
+        margin-top:3px;
+        font-size: 25px;
+    }
+    .submit-container input{
+        font-size: 25px;
+    }
+
 }
