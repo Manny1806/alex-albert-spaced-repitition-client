@@ -1,8 +1,28 @@
 .main-section{
+    position: relative;
     width: 80vw;
     height: 70vh;
     margin: 0 auto;
-    background-color: silver;
+    /* background-color: silver; */
+    
+}
+
+.main-section-fill-fade-in{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: pokemon-fade-in-animation 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.main-section-fill-fade-out{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    animation: pokemon-fade-out-animation 1s forwards;
+    /* animation-delay: 0.5s; */
 }
 
 .image-outer-box {
@@ -43,6 +63,11 @@
     box-sizing: border-box;
     border-radius: 5%
 }
+
+.description {
+    font-size: 20px;
+}
+
 .pokemon-image-fade-in {
     display: block;
     position: relative;
@@ -80,7 +105,9 @@
 }
 
 .submit-container{
-    margin-top: 30%;
+    position: absolute;
+    width: 100%;
+    top: 46%;
     text-align: center;
 }
 .submit-container button{
@@ -90,26 +117,50 @@
 .result {
     position: absolute;
     bottom: 4px;
+    height: 40%;
     width: 100%;
     text-align: center;
 }
 
 .result button{
     display: block;
-    margin: 4px auto;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    
+}
+
+.message {
+    display: block;
+    margin-top: 16%;
+    color: rgb(0, 201, 0)
+}
+
+.message-wrong{
+    display: block;
+    margin-top: 16%;
+    color: red;
 }
 
 .result span{
     margin-bottom: 0;
 }
 
+.attempts-passed-container{
+    
+}
+
 .attempts{
     display: block;
+    /* position: absolute;
+    bottom: 30%; */
 }
 
 .passed{
     display: block;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 @keyframes pokemon-fade-in-animation {

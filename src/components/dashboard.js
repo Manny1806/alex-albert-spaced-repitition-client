@@ -10,6 +10,7 @@ export class Dashboard extends React.Component {
         super(props);
         // Don't call this.setState() here!
         this.state = { imageClass: 'pokemon-image-fade-in',
+                       backgroundClass: 'main-section-fill-fade-in',
                        inputValue: "",
                        buttonDisable: false };
     }
@@ -36,16 +37,16 @@ export class Dashboard extends React.Component {
             this.displayName("Who's that pokemon?")
             return <div></div>
         } else if (this.props.results.bool === true){
-            return <div><span className="attempts">Total Attempts: {this.props.results.attempts}</span>
-                <span className="passed">Passed Attempts: {this.props.results.passed}</span>
-                You are correct!<button onClick={()=>{
+            return <div><div className="attempts-passed-container"><span className="attempts">Total Attempts: {this.props.results.attempts}</span>
+                <span className="passed">Passed Attempts: {this.props.results.passed}</span></div>
+                <span className="message">You are correct!</span><button onClick={()=>{
                 this.props.dispatch(resetQuestionData())
                 this.nextPokemon()}}>Next Pokemon</button>
                 </div>
         } else if (this.props.results.bool === false){
-            return <div><span className="attempts">Total Attempts: {this.props.results.attempts}</span>
-                <span className="passed">Passed Attempts: {this.props.results.passed}</span>
-                You are incorrect!<button onClick={()=>{
+            return <div><div className="attempts-passed-container"><span className="attempts">Total Attempts: {this.props.results.attempts}</span>
+            <span className="passed">Passed Attempts: {this.props.results.passed}</span></div>
+            <span className="message-wrong">You are incorrect.</span><button onClick={()=>{
                 this.props.dispatch(resetQuestionData())
                 this.nextPokemon()
             }}>Next Pokemon</button></div>
@@ -60,9 +61,10 @@ export class Dashboard extends React.Component {
         
     }
     nextPokemon() {
-        setTimeout(()=>{new Promise(()=>this.props.dispatch(fetchQuestionData(this.props.id)).then(this.setState({imageClass: 'pokemon-image-fade-in'})))}, 1000);
+        setTimeout(()=>{new Promise(()=>this.props.dispatch(fetchQuestionData(this.props.id)).then(this.setState({imageClass: 'pokemon-image-fade-in', backgroundClass: 'main-section-fill-fade-in'})))}, 1000);
         this.setState({
             imageClass: 'pokemon-image-fade-out',
+            backgroundClass: 'main-section-fill-fade-out',
             inputValue: "", 
             buttonDisable: false
         })
@@ -77,7 +79,8 @@ export class Dashboard extends React.Component {
         return (
             
             <div className="dashboard">
-                <div className="main-section">
+                <div className="main-section" >
+                    <div className={this.state.backgroundClass} style={{backgroundColor: "silver"}}></div>
                     <div className="image-outer-box">
                         <div className="image-box">
                         {this.displayName()}
@@ -86,9 +89,9 @@ export class Dashboard extends React.Component {
                     </div>
                     <div className="input-outer-box">
                         <div className="input-box">
-                            <div>{this.props.currentPokemon.description}</div>
+                            <div className="description">{this.props.currentPokemon.description}</div>
                             <div className="submit-container">
-                            <input value={this.state.inputValue} onChange={(e)=>this.updateInputValue(e)}></input>
+                            <input placeholder="your answer"value={this.state.inputValue} onChange={(e)=>this.updateInputValue(e)}></input>
                             <button type="submit" disabled={this.state.buttonDisable} onClick={()=>{
                                 this.handleSubmit()}}>Submit</button>
                             </div>
