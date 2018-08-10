@@ -51,27 +51,27 @@ Pokémon Quiz App is comprised of three major components.
 
 ## Landing Page
 
-![Landing Page](http://innocentdrinks.typepad.com/.a/6a00d83451ba8c69e2016762c7e21a970b-800wi)
+![Landing Page](https://raw.githubusercontent.com/thinkful-ei21/alex-albert-spaced-repitition-client/master/src/screenshots/login-page.png)
 
 All users will be greeted with this page upon visit the home page at `/`. This is rendered by the `LandingPage` component. It uses semantic HTML tags and is responsive to any input failing to meet the required format of an input field. There's also a link to register.
 
-![Register Page](http://innocentdrinks.typepad.com/.a/6a00d83451ba8c69e2016762c7e21a970b-800wi)
+![Register Page](https://raw.githubusercontent.com/thinkful-ei21/alex-albert-spaced-repitition-client/master/src/screenshots/register-page.png)
 
 A page for new users to sign on. Rendered by the `RegistrationPage` component, this component is found in path `/register`. It also has a semantic input form, and is responsive to registration failures such as errors from Username being already in use.
 
-![Dashboard](http://innocentdrinks.typepad.com/.a/6a00d83451ba8c69e2016762c7e21a970b-800wi)
+![Dashboard](https://raw.githubusercontent.com/thinkful-ei21/alex-albert-spaced-repitition-client/master/src/screenshots/quiz-page.png)
 
-The actual quiz. Picture of a Pokemon is displayed on the left, while its description and input box is on the right. Upon submission, the app will respond with a feedback on whether or not the guess is right, along with the number of attempts and passes for this particular Pokemon.
+The actual quiz. Picture of a Pokémon is displayed on the left, while its description and input box is on the right. Upon submission, the app will respond with a feedback on whether or not the guess is right, along with the number of attempts and passes for this particular Pokémon.
 
-The background changes color based on the Pokemon's type. For example, fire types are in red, while water types are in blue.
+The background changes color based on the Pokémon's type. For example, fire types are in red, while water types are in blue.
 
-![Mobile-first](http://innocentdrinks.typepad.com/.a/6a00d83451ba8c69e2016762c7e21a970b-800wi)
+![Mobile-first](https://raw.githubusercontent.com/thinkful-ei21/alex-albert-spaced-repitition-client/master/src/screenshots/mobile-view.png)
 
-This app also supports mobile display. In mobile view, Pokemon picture comes on top, while input and response follow at the bottom.
+This app also supports mobile display. In mobile view, Pokémon picture comes on top, while input and response follow at the bottom.
 
 ## Spaced Repetition Algorithm
 
-(in progress...)
+Pokémon Quiz App uses an algorithm to shuffle the orders in which Pokémon appears as a question. If a user correctly guesses a Pokémon's name, that Pokémon will not appear again until later in the list. Otherwise, it will come back after just one question as to reinforce the user's memory.
 
 ## Upcoming Changes
 
