@@ -25,7 +25,6 @@ export default function reducer(state = initialState, action) {
         };
     }
     else if (action.type === FETCH_QUESTION_DATA_SUCCESS) {
-        // console.log(action.EVENTs)
         return {
             ...state,
             currentPokemon: action.data,
@@ -40,7 +39,6 @@ export default function reducer(state = initialState, action) {
         };
     }
     else if (action.type === SUBMIT_QUESTION_DATA_SUCCESS) {
-        // console.log(action.EVENTs)
         return {...state, results: action.data, error: null, loading:false }
     }
     else if (action.type === FETCH_QUESTION_DATA_ERROR) {
