@@ -10,7 +10,6 @@ export function LandingPage(props) {
 
   return (
     <main className="home" role="main">
-      <h2>Test your knowledge of <span id="eye-catcher">Pokémon</span> names!</h2>
       <LoginForm />
     </main>
   );

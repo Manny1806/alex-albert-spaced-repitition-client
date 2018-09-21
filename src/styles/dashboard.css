@@ -1,3 +1,114 @@
+.pokedex {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: url('http://sf.co.ua/13/04/wallpaper-382851.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.pokedex .row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #dd0b2d;
+  border: 15px solid #88061c;
+  border-radius: 15px;
+  box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.5);
+}
+.pokedex img {
+  width: 100%;
+  height: 100%;
+}
+.pokedex .pic-window {
+  margin-bottom: 10px;
+  background-color: darkgray;
+  border-radius: 10px;
+  border: 30px solid darkgray;
+}
+.pokedex .poke-pic {
+  padding: 10px;
+}
+.pokedex .text-window {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #9fdab1;
+  border: 5px solid #E6E6E6;
+  border-radius: 5px;
+}
+.pokedex p {
+  margin: 0;
+  padding: 10px;
+  font-family: 'Press Start 2P';
+  line-height: 25px;
+}
+.submit-form {
+  width: 100%;
+  padding: 10px;
+  background-color: #9fdab1;
+  border: transparent;
+  font-family: 'Press Start 2P';
+  line-height: 25px;
+}
+.submit-button {
+  font-family: 'Press Start 2P';
+  line-height: 25px;
+  color: white;
+  background-color: #303030;
+  border: 5px solid #404040;
+  border-radius: 3px;
+}
+.submit-button:hover {
+  cursor: pointer;
+}
+.submit-link:hover {
+  color: black;
+  background-color: white;
+  transition-duration: 0.5s;
+}
+.attempts {
+  display: block;
+}
+.passed {
+  display: block;
+}
+.message {
+  display: block;
+  margin-top: 16%;
+  color: rgb(0, 201, 0)
+}
+.message-wrong {
+  display: block;
+  margin-top: 16%;
+  color: red;
+}
+#main-section-fill-fade-in {
+  opacity: 0;
+  animation: pokemon-fade-in-animation 1s forwards;
+  animation-delay: 0.5s;
+}
+#main-section-fill-fade-out {
+  opacity: 1;
+  animation: pokemon-fade-out-animation 1s forwards;
+}
+@keyframes pokemon-fade-in-animation {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes pokemon-fade-out-animation {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+@media only screen and (max-width: 640px) {
+  .panel-decor {
+    display: none;
+  }
+}
+
+
+/*
 .main-section {
   position: relative;
   width: 80vw;
@@ -5,7 +116,6 @@
   margin: 0 auto;
   box-sizing: border-box;
 }
-
 .main-section-fill-fade-in {
   position: absolute;
   width: 100%;
@@ -17,7 +127,6 @@
   animation-delay: 0.5s;
   box-sizing: border-box;
 }
-
 .main-section-fill-fade-out {
   position: absolute;
   width: 100%;
@@ -28,14 +137,12 @@
   animation: pokemon-fade-out-animation 1s forwards;
   box-sizing: border-box;
 }
-
 .image-outer-box {
   float: left;
   width: 50%;
   height: 100%;
   box-sizing: border-box;
 }
-
 .image-box {
   position: relative;
   height: 50vh;
@@ -49,14 +156,12 @@
   border: solid black 7px;
   border-radius: 20px;
 }
-
 .input-outer-box {
   float: left;
   width: 50%;
   height: 100%;
   box-sizing: border-box;
 }
-
 .input-box {
   height: 50vh;
   width: 50vh;
@@ -70,11 +175,9 @@
   border: solid black 7px;
   border-radius: 20px;
 }
-
 .description {
   font-size: 20px;
 }
-
 .pokemon-image-fade-in {
   display: block;
   position: relative;
@@ -86,7 +189,6 @@
   animation: pokemon-fade-in-animation 1s forwards;
   animation-delay: 0.5s;
 }
-
 .pokemon-image-fade-out {
   display: block;
   position: relative;
@@ -97,7 +199,6 @@
   opacity: 1;
   animation: pokemon-fade-out-animation 1s forwards;
 }
-
 .pokemonName {
   display: block;
   position: absolute;
@@ -109,18 +210,15 @@
   right: 0;
   text-align: center;
 }
-
 .submit-container {
   position: absolute;
   width: 95%;
   top: 46%;
   text-align: center;
 }
-
 .submit-container button {
   margin-left: 5px;
 }
-
 .result {
   position: absolute;
   bottom: 4px;
@@ -128,7 +226,6 @@
   width: 95%;
   text-align: center;
 }
-
 .result button {
   display: block;
   margin-right: auto;
@@ -137,27 +234,22 @@
   right: 0;
   margin-top: 5px;
 }
-
 .message {
   display: block;
   margin-top: 16%;
   color: rgb(0, 201, 0)
 }
-
 .message-wrong {
   display: block;
   margin-top: 16%;
   color: red;
 }
-
 .result span {
   margin-bottom: 0;
 }
-
 .attempts {
   display: block;
 }
-
 .passed {
   display: block;
 }
@@ -166,7 +258,6 @@
   from {opacity: 0;}
   to {opacity: 1;}
 }
-
 @keyframes pokemon-fade-out-animation {
   from {opacity: 1;}
   to {opacity: 0;}
@@ -409,3 +500,4 @@
     font-size: 25px;
   }
 }
+*/

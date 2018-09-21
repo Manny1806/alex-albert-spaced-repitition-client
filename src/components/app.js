@@ -4,6 +4,7 @@ import { Route, withRouter } from 'react-router-dom';
 
 import { refreshAuthToken } from '../actions/auth.js';
 import HeaderBar from './header-bar.js';
+import Title from './title.js';
 import LandingPage from './landing-page.js';
 import Dashboard from './dashboard.js';
 import RegistrationPage from './registration-page.js';
@@ -37,12 +38,13 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <React.Fragment>
         <HeaderBar />
+        <Title />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/register" component={RegistrationPage} />
-      </div>
+      </React.Fragment>
     );
   }
 }
