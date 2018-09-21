@@ -24,6 +24,11 @@
   font-size: 25px;
   line-height: 30px;
 }
+.intro img {
+  margin-top: 70px;
+  margin-bottom: 50px;
+  border-radius: 8px;
+}
 .intro hr {
   border: 1px solid white;
 }
@@ -53,6 +58,9 @@
   padding: 30px;
   background: rgba(0,0,0,0.25);
   border-radius: 5px;
+}
+.call-to-action hr {
+  border: 1px solid white;
 }
 .call-to-action a {
   display: block;

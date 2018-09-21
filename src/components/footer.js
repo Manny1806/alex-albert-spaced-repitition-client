@@ -8,7 +8,7 @@ export function Footer(props) {
     <footer>
     <div className="row">
       <section className="col-4 box">
-        <ul><h2>Meet the creators!</h2>
+        <ul><h2>Created by</h2>
           <li><a target="_blank" rel="noopener noreferrer" href="https://albert-sare.netlify.com">Albert Sare</a></li>
           <li><a target="_blank" rel="noopener noreferrer" href="http://alex-widner.surge.sh/">Alex Widner</a></li>
         </ul>
@@ -21,7 +21,7 @@ export function Footer(props) {
       </section>
       <section className="col-4 box">
         <h2>About</h2>
-        <p>This app is powered by HTLM, CSS, JavaScript, React, Redux, Node, and Express.</p>
+        <p>This app is powered by HTML, CSS, JavaScript, React, Redux, Node, and Express.</p>
         <p>Pokémon and Pokémon character names are trademarks of Nintendo. Other trademarks are the property of their respective owners.</p>
       </section>
     </div>

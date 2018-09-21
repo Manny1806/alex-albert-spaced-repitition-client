@@ -16,7 +16,7 @@ export function LandingPage(props) {
             <p>This learning center uses an algorithm to help memorize names via spaced-repetition guessing. The user's guess history will determine which Pokémon should be reviewed.</p>
           </section>
           <section className="col-6 box">
-            <img src="https://raw.githubusercontent.com/thinkful-ei21/alex-albert-spaced-repitition-client/master/src/screenshots/quiz-page.png" alt="Pokémon Learning Center screenshot." />
+            <img src={require('../images/screenshot.png')} alt="Pokémon Learning Center screenshot." />
           </section>
         </div>
       </article>
