@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 
-import { refreshAuthToken } from '../actions/auth.js';
-import HeaderBar from './header-bar.js';
-import Title from './title.js';
-import LandingPage from './landing-page.js';
-import Dashboard from './dashboard.js';
-import RegistrationPage from './registration-page.js';
+import { refreshAuthToken } from './actions/auth.js';
+import NavBar from './components/nav-bar.js';
+import HeaderBar from './components/header-bar.js';
+import LandingPage from './components/landing-page.js';
+import LoginPage from './components/login-page.js';
+import RegistrationPage from './components/registration-page.js';
+import Dashboard from './components/dashboard.js';
+import Footer from './components/footer.js';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -39,11 +41,13 @@ export class App extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <NavBar />
         <HeaderBar />
-        <Title />
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegistrationPage} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Footer />
       </React.Fragment>
     );
   }

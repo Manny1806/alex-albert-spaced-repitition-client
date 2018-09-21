@@ -3,25 +3,17 @@
 }
 
 html {
-  background: url(https://img.wallpapersafari.com/desktop/1600/900/75/83/S1GOo7.png) no-repeat center center fixed;
-  background-size: cover;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   height: 100%;
-}
-
-.home h2 {
-  margin: 0 auto;
-  width: 320px;
-  color: white;
-  text-align: center;
-  padding-bottom: 20px;
-}
-
-h2 #eye-catcher {
-  text-decoration: underline;
+  background: url('http://sf.co.ua/13/04/wallpaper-382851.jpg') no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }

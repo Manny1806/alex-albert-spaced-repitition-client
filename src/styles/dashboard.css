@@ -1,13 +1,9 @@
 .pokedex {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background: url('http://sf.co.ua/13/04/wallpaper-382851.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 120px;
 }
 .pokedex .row {
+  max-width: 800px;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #dd0b2d;
@@ -67,6 +63,9 @@
   background-color: white;
   transition-duration: 0.5s;
 }
+.submit-form:focus, .submit-button:focus, .submit-link:focus {
+  outline: none;
+}
 .attempts {
   display: block;
 }
@@ -76,13 +75,14 @@
 .message {
   display: block;
   margin-top: 16%;
-  color: rgb(0, 201, 0)
+  color: green;
 }
 .message-wrong {
   display: block;
   margin-top: 16%;
   color: red;
 }
+
 #main-section-fill-fade-in {
   opacity: 0;
   animation: pokemon-fade-in-animation 1s forwards;
@@ -96,7 +96,6 @@
   from {opacity: 0;}
   to {opacity: 1;}
 }
-
 @keyframes pokemon-fade-out-animation {
   from {opacity: 1;}
   to {opacity: 0;}

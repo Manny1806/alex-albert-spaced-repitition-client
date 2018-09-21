@@ -11,7 +11,6 @@ export function RegistrationPage(props) {
 
   return (
     <main className="home" role="main">
-      <h2>Begin your training as a <span id="eye-catcher">Pokémon</span> master today!</h2>
       <RegistrationForm />
     </main>
   );

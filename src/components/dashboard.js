@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import requiresLogin from './requires-login.js';
 // import { fetchProtectedData } from '../actions/protected-data.js';
@@ -99,7 +99,7 @@ export class Dashboard extends React.Component {
             this.props.dispatch(resetQuestionData());
             this.nextPokemon();
           }}
-        >Next Pokemon
+        >Next Pokémon
         </button>
         </React.Fragment>
       );

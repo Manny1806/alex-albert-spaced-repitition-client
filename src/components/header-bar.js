@@ -1,39 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import { clearAuth } from '../actions/auth.js';
-import { clearAuthToken } from '../local-storage.js';
-import { resetQuestionData } from '../actions/questions.js';
-
+import '../styles/float-grid.css';
 import '../styles/header-bar.css';
 
-export class HeaderBar extends React.Component {
-  logOut() {
-    this.props.dispatch(resetQuestionData())
-    this.props.dispatch(clearAuth());
-    clearAuthToken();
-  }
-
-  render() {
-    // Only render the log out button if we are logged in
-    let logOutButton;
-    if (this.props.loggedIn) {
-      logOutButton = (<button onClick={() => this.logOut()}>Log out</button>);
-    }
-    return (
-      <nav className="header-bar">
-        <h1>Welcome {this.props.firstName}!</h1>
-        {logOutButton}
-      </nav>
-    );
-  }
+export function HeaderBar(props) {
+  return (
+    <header role="banner">
+      <div className="row">
+        <section className="col-12 box">
+          <img className="logo" src={require('../images/logo.png')} alt="Pokémon Learning Center logo."/>
+        </section>
+      </div>
+    </header>
+  );
 }
 
-const mapStateToProps = (state, props) => {
-  return {
-    loggedIn: state.auth.currentUser !== null,
-    firstName: state.auth.currentUser !== null ? state.auth.currentUser.firstName : ""
-  };
-};
-
-export default connect(mapStateToProps)(HeaderBar);
+export default HeaderBar;

@@ -70,7 +70,7 @@ export class RegistrationForm extends React.Component {
             Register
           </button>
         </form>
-        <p>Click here to <Link to="/">Login</Link></p>
+        <p>Click here to <Link to="/login">Login</Link></p>
       </section>
     );
   }
