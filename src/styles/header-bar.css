@@ -1,35 +1,28 @@
 .header-bar {
-    /* padding-left: 15px; */
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }
 
-.header-bar button{
-    /* padding-left: 15px; */
-    margin-bottom: 10px;
+.header-bar button {
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 825px) {
-    h1 {
-        margin-bottom: 0px;
-        font-size: 25px;
-    }
-
-    .header-bar button{
-        /* padding-left: 15px; */
-        margin-bottom: 4px;
-    }
+  h1 {
+    margin-bottom: 0px;
+    font-size: 25px;
+  }
+  .header-bar button {
+    margin-bottom: 4px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 15px;
-    }
-    .header-bar button{
-        /* padding-left: 15px; */
-        margin-bottom: 4px;
-        font-size: 12px;
-    }
-   
-    
+  h1 {
+    font-size: 15px;
+  }
+  .header-bar button {
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
 }
